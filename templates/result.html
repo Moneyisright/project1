@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+<div>
+    <table>
+        <tr>
+            <th>isbn</th>
+            <th>title</th>
+            <th>author</th>
+            <th>year</th>            
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.isbn }}</td>
+            <td>{{ result.title }}</td>
+            <td>{{ result.author }}</td>
+            <td>{{ result.year }} </td>
+            <td> <a href="{{ url_for('bookReview', bookISBN=result.isbn.strip()) }}">view</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+
+{% endblock %}

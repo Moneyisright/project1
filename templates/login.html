@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+    <form action="{{ url_for('home')}}" method="POST"> 
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="userEmail" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" name="userPw" class="form-control" id="exampleInputPassword1">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">login</button>
+    </form>
+{% endblock %}

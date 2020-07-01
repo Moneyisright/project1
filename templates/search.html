@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block body %}
+<div>
+    <form method="POST" action="{{ url_for('result') }}">
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="choice1" value="1" name="radOption" class="custom-control-input" checked>
+            <label class="custom-control-label" for="choice1">ISBN</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="choice2" value="2" name="radOption" class="custom-control-input">
+            <label class="custom-control-label" for="choice2">Title</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="choice3" value="3" name="radOption" class="custom-control-input">
+            <label class="custom-control-label" for="choice3">Author</label>
+        </div>
+        <input class="form-control mr-sm-2" type="text" name="sInput" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        
+    </form>
+</div>
+{% endblock %}
